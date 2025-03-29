@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /blog/
+Disallow: /api/
+Sitemap: https://emojibioai.com/sitemap.xml
