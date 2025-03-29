@@ -75,7 +75,7 @@ def blog_post(slug):
 @app.route("/sitemap.xml")
 def sitemap():
     files = [f for f in os.listdir("content") if f.endswith(".md")]
-    urls = [f"https://emojibioai.com/blog/{f.replace('.md', '')}" for f in files]
+    urls = [f"https://yourdomain.com/blog/{f.replace('.md', '')}" for f in files]
     sitemap_xml = f"""<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     {''.join([f"<url><loc>{url}</loc></url>" for url in urls])}
@@ -87,7 +87,7 @@ def robots():
     robots_txt = """User-agent: *
 Allow: /blog/
 Disallow: /api/
-Sitemap: https://emojibioai.com/sitemap.xml"""
+Sitemap: https://yourdomain.com/sitemap.xml"""
     return Response(robots_txt, mimetype="text/plain")
 
 if __name__ == "__main__":
